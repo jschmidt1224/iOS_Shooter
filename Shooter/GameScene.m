@@ -1,49 +1,46 @@
-//
-//  GameScene.m
-//  Shooter
-//
-//  Created by Jason Schmidt on 6/22/16.
-//  Copyright (c) 2016 Jason Schmidt. All rights reserved.
-//
-
 #import "GameScene.h"
+
+@interface GameScene ()
+@property (nonatomic) SKSpriteNode * player;
+@end
 
 @implementation GameScene
 
--(void)didMoveToView:(SKView *)view {
-    /* Setup your scene here */
-    SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    
-    myLabel.text = @"Hello, World!";
-    myLabel.fontSize = 45;
-    myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                   CGRectGetMidY(self.frame));
-    
-    [self addChild:myLabel];
+-(id)initWithSize:(CGSize)size {
+    if (self = [super initWithSize:size]) {
+        
+        // 2
+        NSLog(@"Size: %@", NSStringFromCGSize(size));
+        
+        // 3
+        self.backgroundColor = [SKColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+        
+        // 4
+        self.player = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
+        self.player.xScale = .125;
+        self.player.yScale = .125;
+        self.player.zRotation = M_PI / -2;
+        
+        self.player.position = CGPointMake(100, 100);
+        [self addChild:self.player];
+        
+    }
+    return self;
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    /* Called when a touch begins */
-    
+-(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     for (UITouch *touch in touches) {
-        CGPoint location = [touch locationInNode:self];
-        
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-        
-        sprite.xScale = 0.5;
-        sprite.yScale = 0.5;
-        sprite.position = location;
-        
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-        
-        [sprite runAction:[SKAction repeatActionForever:action]];
-        
-        [self addChild:sprite];
+        [self setPlayerPosition:[touch locationInNode:self]];
+    }
+}
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    for (UITouch *touch in touches) {
+        [self setPlayerPosition:[touch locationInNode:self]];
     }
 }
 
--(void)update:(CFTimeInterval)currentTime {
-    /* Called before each frame is rendered */
+-(void)setPlayerPosition:(CGPoint) pos {
+    self.player.position = pos;
 }
 
 @end
