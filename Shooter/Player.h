@@ -9,5 +9,9 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface Player : SKSpriteNode
-
+@property float xSpeed;
+@property float ySpeed;
+-(void)handleMoveTouch:(CGPoint) location;
+-(void)handleShootTouch:(CGPoint) location;
+-(void)update;
 @end
