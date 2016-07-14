@@ -1,11 +1,12 @@
 #import "GameScene.h"
-#import "Player.h"
+#import "JASPlayer.h"
+#import "JASEntity.h"
 
-@interface GameScene () {
-    UITouch* moveTouch;
-    UITouch* shootTouch;
-}
-@property Player * player;
+@interface GameScene ()
+@property UITouch*moveTouch;
+@property UITouch *shootTouch;
+@property JASPlayer *player;
+@property NSMutableSet *childrenEntity;
 @end
 
 @implementation GameScene
@@ -17,9 +18,8 @@
         self.view.multipleTouchEnabled = YES;
         
         self.backgroundColor = [SKColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
-        NSLog(@"About to Init Player");
         
-        self.player = [[Player alloc] init];
+        self.player = [[JASPlayer alloc] init];
         
         [self addChild:self.player];
         
@@ -30,13 +30,13 @@
 -(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     if ([touches count] > 0) {
         for (UITouch *touch in touches) {
-            if (touch == moveTouch) {
+            if (touch == self.moveTouch) {
                 CGPoint point = [touch locationInNode:self];
-                [_player handleMoveTouch:point];
+                [self.player handleMoveTouch:point];
             }
-            if (touch == shootTouch) {
+            if (touch == self.shootTouch) {
                 CGPoint point = [touch locationInNode:self];
-                [_player handleShootTouch:point];
+                [self.player handleShootTouch:point];
             }
         }
     }
@@ -47,12 +47,13 @@
         for (UITouch *touch in touches) {
             CGPoint point = [touch locationInNode:self];
             if (point.x < 200 && point.y < 200) {
-                moveTouch = touch;
-                [_player handleMoveTouch:point];
+                self.moveTouch = touch;
+                [self.player handleMoveTouch:point];
             }
             if (point.x > self.size.width - 200 && point.y < 200) {
-                shootTouch = touch;
-                [_player handleShootTouch:point];
+                self.shootTouch = touch;
+                [self.player handleShootTouch:point];
+                self.player.isTouched = YES;
             }
         }
     }
@@ -61,36 +62,21 @@
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     if ([touches count] > 0) {
         for (UITouch *touch in touches) {
-            if (touch == moveTouch) {
-                self.player.xSpeed = 0;
-                self.player.ySpeed = 0;
+            if (touch == self.moveTouch) {
+                self.player.V = CGPointMake(0, 0);
+            }
+            if (touch == self.shootTouch) {
+                self.player.isTouched = NO;
             }
         }
     }
 }
 
-//-(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    for (UITouch *touch in touches) {
-//        [_player handleTouch:[touch locationInNode:self]];
-//    }
-//}
-//
-//-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    for (UITouch *touch in touches) {
-//        [_player handleTouch:[touch locationInNode:self]];
-//    }
-//}
-//
-//-(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    for (UITouch *touch in touches) {
-//        self.player.xSpeed = 0;
-//        self.player.ySpeed = 0;
-//    }
-//}
-
 -(void)update:(NSTimeInterval)currentTime {
-    //NSLog(@"updating");
-    [_player update];
+    //NSLog(@"%d", self.children.count);
+    for (JASEntity* entity in self.children) {
+        [entity update];
+    }
 }
 
 

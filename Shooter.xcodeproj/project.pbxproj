@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		965FD50C1D35BA73000F4B2A /* JASEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 965FD50B1D35BA73000F4B2A /* JASEntity.m */; };
+		965FD5131D36CC3F000F4B2A /* JASMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 965FD5121D36CC3F000F4B2A /* JASMath.m */; };
+		965FD5171D374374000F4B2A /* JASBullet.m in Sources */ = {isa = PBXBuildFile; fileRef = 965FD5161D374374000F4B2A /* JASBullet.m */; };
 		967DD56E1D1AF96A00A85574 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 967DD56D1D1AF96A00A85574 /* main.m */; };
 		967DD5711D1AF96A00A85574 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 967DD5701D1AF96A00A85574 /* AppDelegate.m */; };
 		967DD5741D1AF96A00A85574 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 967DD5731D1AF96A00A85574 /* GameScene.m */; };
@@ -16,7 +19,7 @@
 		967DD5811D1AF96A00A85574 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967DD57F1D1AF96A00A85574 /* LaunchScreen.storyboard */; };
 		967DD58C1D1AF96A00A85574 /* ShooterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 967DD58B1D1AF96A00A85574 /* ShooterTests.m */; };
 		967DD5971D1AF96A00A85574 /* ShooterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 967DD5961D1AF96A00A85574 /* ShooterUITests.m */; };
-		967DD5EA1D1B6CDF00A85574 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 967DD5E91D1B6CDF00A85574 /* Player.m */; };
+		967DD5EA1D1B6CDF00A85574 /* JASPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 967DD5E91D1B6CDF00A85574 /* JASPlayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		965FD50A1D35BA73000F4B2A /* JASEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASEntity.h; sourceTree = "<group>"; };
+		965FD50B1D35BA73000F4B2A /* JASEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASEntity.m; sourceTree = "<group>"; };
+		965FD5121D36CC3F000F4B2A /* JASMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASMath.m; sourceTree = "<group>"; };
+		965FD5141D36CC53000F4B2A /* JASMath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JASMath.h; sourceTree = "<group>"; };
+		965FD5151D374374000F4B2A /* JASBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASBullet.h; sourceTree = "<group>"; };
+		965FD5161D374374000F4B2A /* JASBullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASBullet.m; sourceTree = "<group>"; };
 		967DD5691D1AF96A00A85574 /* Shooter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shooter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		967DD56D1D1AF96A00A85574 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		967DD56F1D1AF96A00A85574 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,8 +64,8 @@
 		967DD5921D1AF96A00A85574 /* ShooterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShooterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		967DD5961D1AF96A00A85574 /* ShooterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShooterUITests.m; sourceTree = "<group>"; };
 		967DD5981D1AF96A00A85574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		967DD5E81D1B6CDF00A85574 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
-		967DD5E91D1B6CDF00A85574 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		967DD5E81D1B6CDF00A85574 /* JASPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASPlayer.h; sourceTree = "<group>"; };
+		967DD5E91D1B6CDF00A85574 /* JASPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASPlayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,16 +118,22 @@
 			children = (
 				967DD56F1D1AF96A00A85574 /* AppDelegate.h */,
 				967DD5701D1AF96A00A85574 /* AppDelegate.m */,
+				967DD57D1D1AF96A00A85574 /* Assets.xcassets */,
 				967DD5721D1AF96A00A85574 /* GameScene.h */,
 				967DD5731D1AF96A00A85574 /* GameScene.m */,
-				967DD5E81D1B6CDF00A85574 /* Player.h */,
-				967DD5E91D1B6CDF00A85574 /* Player.m */,
 				967DD5771D1AF96A00A85574 /* GameViewController.h */,
 				967DD5781D1AF96A00A85574 /* GameViewController.m */,
-				967DD57A1D1AF96A00A85574 /* Main.storyboard */,
-				967DD57D1D1AF96A00A85574 /* Assets.xcassets */,
-				967DD57F1D1AF96A00A85574 /* LaunchScreen.storyboard */,
 				967DD5821D1AF96A00A85574 /* Info.plist */,
+				965FD50A1D35BA73000F4B2A /* JASEntity.h */,
+				965FD50B1D35BA73000F4B2A /* JASEntity.m */,
+				965FD5141D36CC53000F4B2A /* JASMath.h */,
+				965FD5121D36CC3F000F4B2A /* JASMath.m */,
+				967DD5E81D1B6CDF00A85574 /* JASPlayer.h */,
+				967DD5E91D1B6CDF00A85574 /* JASPlayer.m */,
+				965FD5151D374374000F4B2A /* JASBullet.h */,
+				965FD5161D374374000F4B2A /* JASBullet.m */,
+				967DD57F1D1AF96A00A85574 /* LaunchScreen.storyboard */,
+				967DD57A1D1AF96A00A85574 /* Main.storyboard */,
 				967DD56C1D1AF96A00A85574 /* Supporting Files */,
 			);
 			path = Shooter;
@@ -284,8 +299,11 @@
 				967DD5791D1AF96A00A85574 /* GameViewController.m in Sources */,
 				967DD5711D1AF96A00A85574 /* AppDelegate.m in Sources */,
 				967DD5741D1AF96A00A85574 /* GameScene.m in Sources */,
+				965FD50C1D35BA73000F4B2A /* JASEntity.m in Sources */,
+				965FD5171D374374000F4B2A /* JASBullet.m in Sources */,
+				965FD5131D36CC3F000F4B2A /* JASMath.m in Sources */,
 				967DD56E1D1AF96A00A85574 /* main.m in Sources */,
-				967DD5EA1D1B6CDF00A85574 /* Player.m in Sources */,
+				967DD5EA1D1B6CDF00A85574 /* JASPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +539,7 @@
 				967DD59D1D1AF96A00A85574 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		967DD59E1D1AF96A00A85574 /* Build configuration list for PBXNativeTarget "ShooterTests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +548,7 @@
 				967DD5A01D1AF96A00A85574 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		967DD5A11D1AF96A00A85574 /* Build configuration list for PBXNativeTarget "ShooterUITests" */ = {
 			isa = XCConfigurationList;
@@ -537,6 +557,7 @@
 				967DD5A31D1AF96A00A85574 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

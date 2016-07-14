@@ -6,12 +6,12 @@
 //  Copyright © 2016 Jason Schmidt. All rights reserved.
 //
 
-#import <SpriteKit/SpriteKit.h>
+#import "JASEntity.h"
 
-@interface Player : SKSpriteNode
-@property float xSpeed;
-@property float ySpeed;
+@interface JASPlayer : JASEntity
+@property int shootCooldown;
+@property int shootCounter;
+@property BOOL isTouched;
 -(void)handleMoveTouch:(CGPoint) location;
 -(void)handleShootTouch:(CGPoint) location;
--(void)update;
 @end
